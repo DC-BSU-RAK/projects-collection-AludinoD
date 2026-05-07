@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!--This xml file is only for the design. It's the buttons/ row/ slots style. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--Color of the surface block -->
+    <solid android:color="@color/surface_color" />
+
+    <!-- The border line (stroke) -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/purple_primary" />
+
+    <corners android:radius="12dp" />
+</shape>

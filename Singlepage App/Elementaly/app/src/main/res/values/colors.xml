@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Light Mode XML-->
+    <!-- Light Mode Colors -->
+    <color name="surface_color">#F5F5F5</color>
+    <color name="text_main">#121212</color>
+
+
+    <color name="purple_primary">#BB86FC</color>
+    <color name="slot_gray">#1E1E1E</color>
+</resources>

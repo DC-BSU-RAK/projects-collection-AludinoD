@@ -1,0 +1,19 @@
+<resources>
+    <!--This is the Light Themes Colors -->
+    <style name="Theme.NaNCalculator" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorSurface">@color/surface_color</item>
+        <item name="android:colorBackground">@color/surface_color</item>
+        <item name="android:textColorPrimary">@color/text_main</item>
+        <!-- Status bar will now follow the surface color -->
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <!-- Makes status bar icons visible (Dark icons in Light mode, Light icons in Dark mode) -->
+        <!--Makes the overlay background still clear when showing the popup modal-->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+</resources>

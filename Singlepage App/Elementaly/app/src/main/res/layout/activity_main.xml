@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    tools:context=".MainActivity">
+
+    <!--Help Button on Top Left-->
+    <ImageButton
+        android:id="@+id/btnHelp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/slot_border"
+        android:padding="12dp"
+        android:src="@android:drawable/ic_menu_help"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#BB86FC" />
+
+    <!--Recipe Book Button on Top Right-->
+    <ImageButton
+        android:id="@+id/btnBook"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/slot_border"
+        android:padding="12dp"
+        android:src="@android:drawable/ic_menu_agenda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#BB86FC" />
+
+    <!--Elementaly Text Header-->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Elementaly"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Slot 1 For Elements-->
+    <ImageButton
+        android:id="@+id/slot1"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/slot_border"
+        android:padding="24dp"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toStartOf="@+id/plusSymbol"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleText" />
+
+    <!-- Add Symbol-->
+    <TextView
+        android:id="@+id/plusSymbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:text="+"
+        android:textColor="#BB86FC"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toBottomOf="@id/slot1"
+        app:layout_constraintEnd_toStartOf="@+id/slot2"
+        app:layout_constraintStart_toEndOf="@id/slot1"
+        app:layout_constraintTop_toTopOf="@id/slot1" />
+
+    <!--Slot 2 For Elements-->
+    <ImageButton
+        android:id="@+id/slot2"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:background="@drawable/slot_border"
+        android:padding="24dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@id/slot1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/plusSymbol"
+        app:layout_constraintTop_toTopOf="@id/slot1" />
+
+    <!--Transmute Button-->
+    <Button
+        android:id="@+id/btnCombine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#BB86FC"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:paddingHorizontal="48dp"
+        android:paddingVertical="14dp"
+        android:text="Transmute"
+        android:textColor="#121212"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slot1" />
+
+    <!-- Text Result That tells what you found or made-->
+    <TextView
+        android:id="@+id/txtResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Select Elements"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCombine" />
+
+    <!-- Discovery Image Indicator -->
+    <ImageView
+        android:id="@+id/imgDiscovery"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerInside"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtResult" />
+
+    <!--Inventory Row for Elements-->
+    <LinearLayout
+        android:id="@+id/inventoryRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="124dp"
+        android:background="@drawable/slot_border"
+        android:backgroundTint="@null"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <!--Fire Button Image-->
+            <ImageButton
+                android:id="@+id/fireBtn"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:foregroundTint="@color/design_default_color_error"
+                android:scaleType="centerInside"
+                android:src="@drawable/fire_icon" />
+
+            <!--Fire Button Text-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Fire"
+                android:textColor="?android:attr/textColorPrimary"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!--Water Button Image-->
+            <ImageButton
+                android:id="@+id/waterBtn"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="centerInside"
+                android:src="@drawable/water_icon" />
+
+            <!--Water Button-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Water"
+                android:textColor="?android:attr/textColorPrimary"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!--Earth Button Image-->
+            <ImageButton
+                android:id="@+id/earthBtn"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="centerInside"
+                android:src="@drawable/earth_icon" />
+
+            <!--Earth Button Text-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Earth"
+                android:textColor="?android:attr/textColorPrimary"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!--Air Button Image-->
+            <ImageButton
+                android:id="@+id/airBtn"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="centerInside"
+                android:src="@drawable/air_icon" />
+
+            <!--Air Button Text-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Air"
+                android:textColor="?android:attr/textColorPrimary"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Theme Toggle Button at the Bottom-->
+    <ImageButton
+        android:id="@+id/btnThemeToggle"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/slot_border"
+        android:padding="12dp"
+        android:src="@drawable/ic_day"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="#BB86FC" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
